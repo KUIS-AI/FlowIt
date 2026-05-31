@@ -338,13 +338,15 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 0.75rem;
+  width: 100%;
 }
 
 .method-buttons-group {
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 0.35rem;
+  width: 100%;
   padding: 0.25rem;
   border: 1px solid #dbdbdb;
   border-radius: 8px;
@@ -352,7 +354,8 @@ body {
 }
 
 .method-button {
-  min-width: 5.25rem;
+  flex: 1 1 0;
+  min-width: 0;
   border: 0;
   border-radius: 6px;
   background: transparent;
@@ -362,7 +365,8 @@ body {
   font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-  padding: 0.65rem 0.9rem;
+  padding: 0.65rem 0.45rem;
+  white-space: nowrap;
   transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
 }
 
@@ -376,6 +380,18 @@ body {
   background: #1f2937;
   color: #ffffff;
   box-shadow: 0 1px 4px rgba(31, 41, 55, 0.2);
+}
+
+.method-button:disabled,
+.method-button.is-disabled {
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.method-button:disabled:hover,
+.method-button.is-disabled:hover {
+  background: transparent;
 }
 
 .image-wrapper-comparison {
@@ -414,8 +430,8 @@ body {
 
 .selection-panel {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.65rem;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 0.45rem;
   margin-top: 1rem;
 }
 
@@ -455,18 +471,18 @@ body {
   }
 
   .selection-panel {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 480px) {
   .method-button {
-    min-width: 4.75rem;
-    padding: 0.6rem 0.7rem;
+    font-size: 0.72rem;
+    padding: 0.55rem 0.2rem;
   }
 
   .selection-panel {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

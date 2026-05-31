@@ -141,15 +141,6 @@ $(document).ready(function() {
       waft: './static/images/layered/150_waft.png',
       ours: './static/images/layered/150_ours.png'
     },
-    layered_364: {
-      label: 'Layered 364',
-      rgb1: './static/images/layered/364_img.jpg',
-      rgb2: './static/images/layered/364_img2.jpg',
-      flowseek: './static/images/layered/364_flowseek.png',
-      searaft: './static/images/layered/364_searaft.png',
-      waft: './static/images/layered/364_waft.png',
-      ours: './static/images/layered/364_ours.png'
-    },
     layered_374: {
       label: 'Layered 374',
       rgb1: './static/images/layered/374_img.jpg',
@@ -166,7 +157,8 @@ $(document).ready(function() {
       flowseek: './static/images/spring/01509_flowseek.jpg',
       searaft: './static/images/spring/01509_searaft.jpg',
       waft: './static/images/spring/01509_waft.jpg',
-      ours: './static/images/spring/01509_ours.jpg'
+      ours: './static/images/spring/01509_ours.jpg',
+      gt: './static/images/spring/01509_gt.jpg'
     },
     spring_01683: {
       label: 'Spring 01683',
@@ -175,7 +167,8 @@ $(document).ready(function() {
       flowseek: './static/images/spring/01683_flowseek.jpg',
       searaft: './static/images/spring/01683_searaft.jpg',
       waft: './static/images/spring/01683_waft.jpg',
-      ours: './static/images/spring/01683_ours.jpg'
+      ours: './static/images/spring/01683_ours.jpg',
+      gt: './static/images/spring/01683_gt.jpg'
     },
     spring_03815: {
       label: 'Spring 03815',
@@ -184,7 +177,8 @@ $(document).ready(function() {
       flowseek: './static/images/spring/03815_flowseek.jpg',
       searaft: './static/images/spring/03815_searaft.jpg',
       waft: './static/images/spring/03815_waft.jpg',
-      ours: './static/images/spring/03815_ours.jpg'
+      ours: './static/images/spring/03815_ours.jpg',
+      gt: './static/images/spring/03815_gt.jpg'
     },
     spring_04357: {
       label: 'Spring 04357',
@@ -193,15 +187,86 @@ $(document).ready(function() {
       flowseek: './static/images/spring/04357_flowseek.jpg',
       searaft: './static/images/spring/04357_searaft.jpg',
       waft: './static/images/spring/04357_waft.jpg',
-      ours: './static/images/spring/04357_ours.jpg'
+      ours: './static/images/spring/04357_ours.jpg',
+      gt: './static/images/spring/04357_gt.jpg'
+    },
+    sintel_frame6: {
+      label: 'Sintel frame6',
+      rgb1: './static/images/sintel/frame6_rgb.jpg',
+      rgb2: './static/images/sintel/frame6_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame6_flowseek.jpg',
+      searaft: './static/images/sintel/frame6_searaft.jpg',
+      waft: './static/images/sintel/frame6_waft.jpg',
+      ours: './static/images/sintel/frame6_ours.jpg',
+      gt: './static/images/sintel/frame6_gt.jpg'
+    },
+    sintel_frame313: {
+      label: 'Sintel frame313',
+      rgb1: './static/images/sintel/frame313_rgb.jpg',
+      rgb2: './static/images/sintel/frame313_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame313_flowseek.jpg',
+      searaft: './static/images/sintel/frame313_searaft.jpg',
+      waft: './static/images/sintel/frame313_waft.jpg',
+      ours: './static/images/sintel/frame313_ours.jpg',
+      gt: './static/images/sintel/frame313_gt.jpg'
+    },
+    sintel_frame360: {
+      label: 'Sintel frame360',
+      rgb1: './static/images/sintel/frame360_rgb.jpg',
+      rgb2: './static/images/sintel/frame360_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame360_flowseek.jpg',
+      searaft: './static/images/sintel/frame360_searaft.jpg',
+      waft: './static/images/sintel/frame360_waft.jpg',
+      ours: './static/images/sintel/frame360_ours.jpg',
+      gt: './static/images/sintel/frame360_gt.jpg'
+    },
+    sintel_frame384: {
+      label: 'Sintel frame384',
+      rgb1: './static/images/sintel/frame384_rgb.jpg',
+      rgb2: './static/images/sintel/frame384_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame384_flowseek.jpg',
+      searaft: './static/images/sintel/frame384_searaft.jpg',
+      waft: './static/images/sintel/frame384_waft.jpg',
+      ours: './static/images/sintel/frame384_ours.jpg',
+      gt: './static/images/sintel/frame384_gt.jpg'
+    },
+    sintel_frame565: {
+      label: 'Sintel frame565',
+      rgb1: './static/images/sintel/frame565_rgb.jpg',
+      rgb2: './static/images/sintel/frame565_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame565_flowseek.jpg',
+      searaft: './static/images/sintel/frame565_searaft.jpg',
+      waft: './static/images/sintel/frame565_waft.jpg',
+      ours: './static/images/sintel/frame565_ours.jpg',
+      gt: './static/images/sintel/frame565_gt.jpg'
+    },
+    sintel_frame766: {
+      label: 'Sintel frame766',
+      rgb1: './static/images/sintel/frame766_rgb.jpg',
+      rgb2: './static/images/sintel/frame766_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame766_flowseek.jpg',
+      searaft: './static/images/sintel/frame766_searaft.jpg',
+      waft: './static/images/sintel/frame766_waft.jpg',
+      ours: './static/images/sintel/frame766_ours.jpg',
+      gt: './static/images/sintel/frame766_gt.jpg'
+    },
+    sintel_frame836: {
+      label: 'Sintel frame836',
+      rgb1: './static/images/sintel/frame836_rgb.jpg',
+      rgb2: './static/images/sintel/frame836_rgb_img2.jpg',
+      flowseek: './static/images/sintel/frame836_flowseek.jpg',
+      searaft: './static/images/sintel/frame836_searaft.jpg',
+      waft: './static/images/sintel/frame836_waft.jpg',
+      ours: './static/images/sintel/frame836_ours.jpg',
+      gt: './static/images/sintel/frame836_gt.jpg'
     }
   };
 
   var comparisonState = {
-    scene: 'kitti_00005',
+    scene: 'sintel_frame360',
     methods: {
-      1: 'ours',
-      2: 'flowseek'
+      1: 'waft',
+      2: 'ours'
     }
   };
 
@@ -209,23 +274,53 @@ $(document).ready(function() {
     flowseek: 'FlowSeek',
     searaft: 'SEA-RAFT',
     waft: 'WAFT',
-    ours: 'Ours'
+    ours: 'Ours',
+    gt: 'Ground-truth'
   };
 
   function updateComparisonImage(viewer) {
     var scene = comparisonScenes[comparisonState.scene];
     var method = comparisonState.methods[viewer];
     var image = document.getElementById('comparisonImage' + viewer);
-    if (!scene || !method || !image) return;
+    if (!scene || !method || !image || !scene[method]) return;
 
     image.src = scene[method];
     image.alt = methodLabels[method] + ' output for ' + scene.label;
   }
 
   function updateComparison() {
+    ensureAvailableMethods();
+    updateMethodButtons();
     updateComparisonImage(1);
     updateComparisonImage(2);
     updateRgbImages();
+  }
+
+  function ensureAvailableMethods() {
+    var scene = comparisonScenes[comparisonState.scene];
+    if (!scene) return;
+
+    Object.keys(comparisonState.methods).forEach(function(viewer) {
+      if (!scene[comparisonState.methods[viewer]]) {
+        comparisonState.methods[viewer] = 'ours';
+      }
+    });
+  }
+
+  function updateMethodButtons() {
+    var scene = comparisonScenes[comparisonState.scene];
+    var wrapper = document.getElementById('image-compare-wrapper');
+    if (!scene || !wrapper) return;
+
+    wrapper.querySelectorAll('.method-button').forEach(function(button) {
+      var viewer = button.dataset.viewer;
+      var method = button.dataset.method;
+      var isAvailable = Boolean(scene[method]);
+
+      button.disabled = !isAvailable;
+      button.classList.toggle('is-disabled', !isAvailable);
+      button.classList.toggle('active', isAvailable && comparisonState.methods[viewer] === method);
+    });
   }
 
   function updateRgbImages() {
@@ -249,13 +344,11 @@ $(document).ready(function() {
       button.addEventListener('click', function() {
         var viewer = button.dataset.viewer;
         var method = button.dataset.method;
+        var scene = comparisonScenes[comparisonState.scene];
+        if (button.disabled || !scene || !scene[method]) return;
+
         comparisonState.methods[viewer] = method;
-
-        wrapper.querySelectorAll('.method-button[data-viewer="' + viewer + '"]').forEach(function(peerButton) {
-          peerButton.classList.toggle('active', peerButton === button);
-        });
-
-        updateComparisonImage(viewer);
+        updateComparison();
       });
     });
 

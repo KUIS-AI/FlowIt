@@ -268,26 +268,28 @@ for Optical Flow</h1><h1 class="title is-1 publication-title" style="margin-bott
                 <div class="method-buttons-group" data-viewer="1">
                   <button class="method-button" type="button" data-method="flowseek" data-viewer="1">FlowSeek</button>
                   <button class="method-button" type="button" data-method="searaft" data-viewer="1">SEA-RAFT</button>
-                  <button class="method-button" type="button" data-method="waft" data-viewer="1">WAFT</button>
-                  <button class="method-button active" type="button" data-method="ours" data-viewer="1">Ours</button>
+                  <button class="method-button active" type="button" data-method="waft" data-viewer="1">WAFT</button>
+                  <button class="method-button" type="button" data-method="ours" data-viewer="1">Ours</button>
+                  <button class="method-button" type="button" data-method="gt" data-viewer="1">GT</button>
                 </div>
               </div>
               <div class="image-wrapper-comparison">
-                <img id="comparisonImage1" src="./static/images/kitti/kitti_train_ours_00005.jpg" alt="Ours output for KITTI 00005">
+                <img id="comparisonImage1" src="./static/images/sintel/frame360_waft.jpg" alt="WAFT output for Sintel frame360">
               </div>
             </div>
 
             <div class="comparison-pair">
               <div class="comparison-buttons-container">
                 <div class="method-buttons-group" data-viewer="2">
-                  <button class="method-button active" type="button" data-method="flowseek" data-viewer="2">FlowSeek</button>
+                  <button class="method-button" type="button" data-method="flowseek" data-viewer="2">FlowSeek</button>
                   <button class="method-button" type="button" data-method="searaft" data-viewer="2">SEA-RAFT</button>
                   <button class="method-button" type="button" data-method="waft" data-viewer="2">WAFT</button>
-                  <button class="method-button" type="button" data-method="ours" data-viewer="2">Ours</button>
+                  <button class="method-button active" type="button" data-method="ours" data-viewer="2">Ours</button>
+                  <button class="method-button" type="button" data-method="gt" data-viewer="2">GT</button>
                 </div>
               </div>
               <div class="image-wrapper-comparison">
-                <img id="comparisonImage2" src="./static/images/kitti/kitti_train_flowseek_00005.jpg" alt="FlowSeek output for KITTI 00005">
+                <img id="comparisonImage2" src="./static/images/sintel/frame360_ours.jpg" alt="Ours output for Sintel frame360">
               </div>
             </div>
           </div>
@@ -296,35 +298,38 @@ for Optical Flow</h1><h1 class="title is-1 publication-title" style="margin-bott
             <div class="rgb-frame-pair">
               <div class="rgb-frame-label">Frame 1</div>
               <div class="image-wrapper-comparison">
-                <img id="comparisonRgb1" src="./static/images/kitti/kitti_train_000005_10.jpg" alt="First RGB frame for KITTI 00005">
+                <img id="comparisonRgb1" src="./static/images/sintel/frame360_rgb.jpg" alt="First RGB frame for Sintel frame360">
               </div>
             </div>
             <div class="rgb-frame-pair">
               <div class="rgb-frame-label">Frame 2</div>
               <div class="image-wrapper-comparison">
-                <img id="comparisonRgb2" src="./static/images/kitti/kitti_train_000005_img2.jpg" alt="Second RGB frame for KITTI 00005">
+                <img id="comparisonRgb2" src="./static/images/sintel/frame360_rgb_img2.jpg" alt="Second RGB frame for Sintel frame360">
               </div>
             </div>
           </div>
 
           <div id="comparisonSelectionPanel" class="selection-panel">
-            <button class="selectable-image selected" type="button" data-scene="kitti_00005" aria-label="KITTI 00005">
-              <img src="./static/images/kitti/kitti_train_000005_10.jpg" alt="KITTI 00005 thumbnail">
+            <button class="selectable-image selected" type="button" data-scene="sintel_frame360" aria-label="Sintel frame360">
+              <img src="./static/images/sintel/frame360_rgb.jpg" alt="Sintel frame360 thumbnail">
             </button>
-            <button class="selectable-image" type="button" data-scene="kitti_00087" aria-label="KITTI 00087">
-              <img src="./static/images/kitti/kitti_train_000087_10.jpg" alt="KITTI 00087 thumbnail">
+            <button class="selectable-image" type="button" data-scene="sintel_frame313" aria-label="Sintel frame313">
+              <img src="./static/images/sintel/frame313_rgb.jpg" alt="Sintel frame313 thumbnail">
             </button>
-            <button class="selectable-image" type="button" data-scene="kitti_00117" aria-label="KITTI 00117">
-              <img src="./static/images/kitti/kitti_train_000117_10.jpg" alt="KITTI 00117 thumbnail">
+            <button class="selectable-image" type="button" data-scene="sintel_frame6" aria-label="Sintel frame6">
+              <img src="./static/images/sintel/frame6_rgb.jpg" alt="Sintel frame6 thumbnail">
             </button>
-            <button class="selectable-image" type="button" data-scene="layered_150" aria-label="Layered 150">
-              <img src="./static/images/layered/150_img.jpg" alt="Layered 150 thumbnail">
+            <button class="selectable-image" type="button" data-scene="sintel_frame384" aria-label="Sintel frame384">
+              <img src="./static/images/sintel/frame384_rgb.jpg" alt="Sintel frame384 thumbnail">
             </button>
-            <button class="selectable-image" type="button" data-scene="layered_364" aria-label="Layered 364">
-              <img src="./static/images/layered/364_img.jpg" alt="Layered 364 thumbnail">
+            <button class="selectable-image" type="button" data-scene="sintel_frame565" aria-label="Sintel frame565">
+              <img src="./static/images/sintel/frame565_rgb.jpg" alt="Sintel frame565 thumbnail">
             </button>
-            <button class="selectable-image" type="button" data-scene="layered_374" aria-label="Layered 374">
-              <img src="./static/images/layered/374_img.jpg" alt="Layered 374 thumbnail">
+            <button class="selectable-image" type="button" data-scene="sintel_frame766" aria-label="Sintel frame766">
+              <img src="./static/images/sintel/frame766_rgb.jpg" alt="Sintel frame766 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="sintel_frame836" aria-label="Sintel frame836">
+              <img src="./static/images/sintel/frame836_rgb.jpg" alt="Sintel frame836 thumbnail">
             </button>
             <button class="selectable-image" type="button" data-scene="spring_01509" aria-label="Spring 01509">
               <img src="./static/images/spring/01509_rgb.jpg" alt="Spring 01509 thumbnail">
@@ -337,6 +342,21 @@ for Optical Flow</h1><h1 class="title is-1 publication-title" style="margin-bott
             </button>
             <button class="selectable-image" type="button" data-scene="spring_04357" aria-label="Spring 04357">
               <img src="./static/images/spring/04357_rgb.jpg" alt="Spring 04357 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="layered_150" aria-label="Layered 150">
+              <img src="./static/images/layered/150_img.jpg" alt="Layered 150 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="layered_374" aria-label="Layered 374">
+              <img src="./static/images/layered/374_img.jpg" alt="Layered 374 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="kitti_00005" aria-label="KITTI 00005">
+              <img src="./static/images/kitti/kitti_train_000005_10.jpg" alt="KITTI 00005 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="kitti_00087" aria-label="KITTI 00087">
+              <img src="./static/images/kitti/kitti_train_000087_10.jpg" alt="KITTI 00087 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="kitti_00117" aria-label="KITTI 00117">
+              <img src="./static/images/kitti/kitti_train_000117_10.jpg" alt="KITTI 00117 thumbnail">
             </button>
           </div>
         </div>
