@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="FlowIt: Global Matching via Hierarchical
+Transformers and Optimal Transport for
+Optical Flow">
+  <meta name="keywords" content="Uncertainty Estimation, Active View Selection, Gaussian Splatting, NeRF, Novel View Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FlowIt: Global Matching via Hierarchical
+Transformers and Optimal Transport for
+Optical Flow</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍉</text></svg>">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/responsive.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/script.js"></script>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+</head>
+
+<body>
+
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+			<h1 class="title is-1 publication-title" style="margin-bottom: 0">FlowIt: Global Matching via Hierarchical
+Transformers and Optimal Transport
+for Optical Flow</h1><h1 class="title is-1 publication-title" style="margin-bottom: 0"></h1>
+          <div class="is-size-4 publication-authors">
+                <!-- <span class="univerity-block" style="color: rgb(54, 54, 54); font-size: 2.5rem"></span> -->
+          </div>
+		  <br>
+
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+				<a href="https://sadrasafa.github.io/">Sadra Safadoust</a><sup>1</sup>,</span>
+            <span class="author-block">
+				<a href="https://fabiotosi92.github.io/">Fabio Tosi</a><sup>2</sup>,</span>
+            <span class="author-block">
+				<a href="https://mattpoggi.github.io/">Matteo Poggi</a><sup>2</sup>,</span>
+            <span class="author-block">
+        <a href="https://mysite.ku.edu.tr/fguney/">Fatma Güney</a><sup>1</sup></span>
+          </div>
+		  <!-- <br> -->
+       <div class="is-size-5 publication-authors">
+        <table class="affiliations-table" role="presentation">
+          <tr>
+            <td class="affiliation">
+              <span class="affiliation-text"><sup>1</sup>KUIS AI Center, Koç University</span>
+            </td>
+            <td class="affiliation">
+              <span class="affiliation-text"><sup>2</sup>University of Bologna</span>
+            </td>
+          </tr>
+        </table>
+        </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2603.28759"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2603.28759"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <span class="external-link button is-normal is-rounded is-light is-static"
+                   aria-disabled="true"
+                   style="pointer-events: none; cursor: default; opacity: 1.0;">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </span>
+              </span>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <div class="container is-max-desktop mt-3">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <img src="./static/images/teaser.png" alt="FlowIt Teaser">
+              <p>We present FlowIt, a novel architecture for optical flow estimation that combines global matching with confidence and occlusion-guided refinement. At its core, FlowIt leverages a hierarchical transformer architecture that captures extensive global context, enabling the model to effectively model long-range correspondences. To overcome the limitations of localized matching, we formulate the flow initialization as an optimal transport problem. This formulation yields a highly robust initial flow field, alongside explicitly derived occlusion and confidence maps. These cues are then seamlessly integrated into a guided refinement stage, where the network actively propagates reliable motion estimates from high-confidence regions into ambiguous, low-confidence areas.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+<hr>
+<!-- <section class="section"> -->
+    <div class="container is-max-desktop">
+      <!-- Concurrent Work. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Method</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/method.png">
+            
+              <p>FlowIt extracts multi-scale features from images using a CNN encoder followed by a Feature Pyramid Network (FPN). These features are processed with one or more Multi-Resolution Transformer (MRT) blocks. A 4D correlation volume is constructed using the $\frac{1}{4}$ resolution features, and optimal transport is applied to produce a 4D probability map. Initial flow, occlusion, and confidence maps are derived using the probability map. These predictions are refined through three refinement iterations to obtain the final outputs.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <!-- </section> -->
+
+<hr>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered mb-5">
+          <div class="column">
+            <h2 class="title is-3">Fine-Tuned Results</h2>
+          </div>
+        </div>
+        <!-- Flow Carousel -->
+        <div class="columns is-centered">
+          <div class="column is-full">
+        <div id="flow-carousel" class="carousel results-carousel">
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/ambush_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/ambush_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/bamboo_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/cave_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/market_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/market_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/mountain_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/PERTURBED_market_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/PERTURBED_shaman_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/temple_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/tiger.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item ">
+            <video autoplay controls muted loop playsinline height="100%" >
+              <source src="./static/videos/wall.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+  <section class="section qualitative-comparison-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Zero-Shot Results</h2>
+          <div class="content has-text-centered">
+            <p>
+              We compare FlowSeek, SEA-RAFT, WAFT, and our method on several scenes in a zero-shot setting.
+            </p>
+          </div>
+
+          <div class="comparison-container" id="image-compare-wrapper">
+            <div class="comparison-pair">
+              <div class="comparison-buttons-container">
+                <div class="method-buttons-group" data-viewer="1">
+                  <button class="method-button" type="button" data-method="flowseek" data-viewer="1">FlowSeek</button>
+                  <button class="method-button" type="button" data-method="searaft" data-viewer="1">SEA-RAFT</button>
+                  <button class="method-button" type="button" data-method="waft" data-viewer="1">WAFT</button>
+                  <button class="method-button active" type="button" data-method="ours" data-viewer="1">Ours</button>
+                </div>
+              </div>
+              <div class="image-wrapper-comparison">
+                <img id="comparisonImage1" src="./static/images/kitti/kitti_train_ours_00005.jpg" alt="Ours output for KITTI 00005">
+              </div>
+            </div>
+
+            <div class="comparison-pair">
+              <div class="comparison-buttons-container">
+                <div class="method-buttons-group" data-viewer="2">
+                  <button class="method-button active" type="button" data-method="flowseek" data-viewer="2">FlowSeek</button>
+                  <button class="method-button" type="button" data-method="searaft" data-viewer="2">SEA-RAFT</button>
+                  <button class="method-button" type="button" data-method="waft" data-viewer="2">WAFT</button>
+                  <button class="method-button" type="button" data-method="ours" data-viewer="2">Ours</button>
+                </div>
+              </div>
+              <div class="image-wrapper-comparison">
+                <img id="comparisonImage2" src="./static/images/kitti/kitti_train_flowseek_00005.jpg" alt="FlowSeek output for KITTI 00005">
+              </div>
+            </div>
+          </div>
+
+          <div class="rgb-comparison-container" id="rgb-compare-wrapper">
+            <div class="rgb-frame-pair">
+              <div class="rgb-frame-label">Frame 1</div>
+              <div class="image-wrapper-comparison">
+                <img id="comparisonRgb1" src="./static/images/kitti/kitti_train_000005_10.jpg" alt="First RGB frame for KITTI 00005">
+              </div>
+            </div>
+            <div class="rgb-frame-pair">
+              <div class="rgb-frame-label">Frame 2</div>
+              <div class="image-wrapper-comparison">
+                <img id="comparisonRgb2" src="./static/images/kitti/kitti_train_000005_img2.jpg" alt="Second RGB frame for KITTI 00005">
+              </div>
+            </div>
+          </div>
+
+          <div id="comparisonSelectionPanel" class="selection-panel">
+            <button class="selectable-image selected" type="button" data-scene="kitti_00005" aria-label="KITTI 00005">
+              <img src="./static/images/kitti/kitti_train_000005_10.jpg" alt="KITTI 00005 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="kitti_00087" aria-label="KITTI 00087">
+              <img src="./static/images/kitti/kitti_train_000087_10.jpg" alt="KITTI 00087 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="kitti_00117" aria-label="KITTI 00117">
+              <img src="./static/images/kitti/kitti_train_000117_10.jpg" alt="KITTI 00117 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="layered_150" aria-label="Layered 150">
+              <img src="./static/images/layered/150_img.jpg" alt="Layered 150 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="layered_364" aria-label="Layered 364">
+              <img src="./static/images/layered/364_img.jpg" alt="Layered 364 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="layered_374" aria-label="Layered 374">
+              <img src="./static/images/layered/374_img.jpg" alt="Layered 374 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="spring_01509" aria-label="Spring 01509">
+              <img src="./static/images/spring/01509_rgb.jpg" alt="Spring 01509 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="spring_01683" aria-label="Spring 01683">
+              <img src="./static/images/spring/01683_rgb.jpg" alt="Spring 01683 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="spring_03815" aria-label="Spring 03815">
+              <img src="./static/images/spring/03815_rgb.jpg" alt="Spring 03815 thumbnail">
+            </button>
+            <button class="selectable-image" type="button" data-scene="spring_04357" aria-label="Spring 04357">
+              <img src="./static/images/spring/04357_rgb.jpg" alt="Spring 04357 thumbnail">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <!-- <div class=" has-text-centered"> -->
+      <h2 class="title is-3">BibTeX</h2>
+    <!-- </div> -->
+    <pre><code>@article{safadoust2026flowit,
+  title={FlowIt: Global Matching via Hierarchical Transformers and Optimal Transport for Optical Flow},
+  author={Safadoust, Sadra and Tosi, Fabio and Poggi, Matteo and G{\"u}ney, Fatma},
+  journal={arXiv preprint arXiv:2603.28759},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+  
+
+</body>
+
+</html>
