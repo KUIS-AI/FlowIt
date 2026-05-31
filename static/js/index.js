@@ -326,13 +326,16 @@ $(document).ready(function() {
   function updateRgbImages() {
     var scene = comparisonScenes[comparisonState.scene];
     var image1 = document.getElementById('comparisonRgb1');
-    var image2 = document.getElementById('comparisonRgb2');
-    if (!scene || !image1 || !image2) return;
+    var animFrame1 = document.getElementById('comparisonAnimFrame1');
+    var animFrame2 = document.getElementById('comparisonAnimFrame2');
+    if (!scene || !image1 || !animFrame1 || !animFrame2) return;
 
     image1.src = scene.rgb1;
     image1.alt = 'First RGB frame for ' + scene.label;
-    image2.src = scene.rgb2;
-    image2.alt = 'Second RGB frame for ' + scene.label;
+    animFrame1.src = scene.rgb1;
+    animFrame1.alt = 'Animated first RGB frame for ' + scene.label;
+    animFrame2.src = scene.rgb2;
+    animFrame2.alt = 'Animated second RGB frame for ' + scene.label;
   }
 
   function initQualitativeComparison() {

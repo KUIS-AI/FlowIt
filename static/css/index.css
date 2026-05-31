@@ -409,6 +409,39 @@ body {
   object-fit: contain;
 }
 
+.rgb-frame-animation {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.rgb-frame-animation img {
+  position: absolute;
+  inset: 0;
+  animation: rgbFrameSwap 1.4s steps(1, end) infinite;
+}
+
+.rgb-frame-animation img:first-child {
+  animation-delay: 0s;
+}
+
+.rgb-frame-animation img:last-child {
+  animation-delay: -0.7s;
+  opacity: 0;
+}
+
+@keyframes rgbFrameSwap {
+  0%,
+  49.999% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .rgb-comparison-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
